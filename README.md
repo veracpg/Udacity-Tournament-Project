@@ -29,7 +29,7 @@ Python / PostgreSQL
         
 ##Execute the DB:  
 
-- Paste the folowing comands in you terminal
+- Paste the following commands in you terminal
     
     > $ psql -f tournament.sql
 

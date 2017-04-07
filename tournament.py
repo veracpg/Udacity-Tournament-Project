@@ -10,7 +10,7 @@ def connect(database_name="tournament"):
     try:
         db = psycopg2.connect("dbname={}".format(database_name))
         cursor = db.cursor()
-        return db , cursor
+        return db, cursor
     except:
         print("<error message>")
 
@@ -48,7 +48,7 @@ def registerPlayer(name):
       name: the player's full name (need not be unique).
     """
     db, cursor = connect()
-    query = "INSERT INTO players (name) VALUES (%%s);"
+    query = "INSERT INTO players (name) VALUES (%s);"
     params = (name,)
     cursor.execute(query, params)
     db.commit()
@@ -84,8 +84,8 @@ def reportMatch(winner, loser):
       loser:  the id number of the player who lost
     """
     db, cursor = connect()
-    query = "INSERT INTO matches (winner, loser) VALUES (%%s, %%s);"
-    params = (winner, loser)
+    query = "INSERT INTO matches (winner, loser) VALUES (%s, %s);"
+    params = (winner, loser, )
     cursor.execute(query, params)
     db.commit()
     db.close()
