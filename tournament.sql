@@ -9,11 +9,6 @@ CREATE DATABASE tournament;
 --Connect to database
 \c tournament
 
--- Drop tables if it exists
-DROP TABLE IF EXISTS players CASCADE;
-DROP TABLE IF EXISTS matches  CASCADE;
-DROP VIEW IF EXISTS standings CASCADE;
-
 -- Create players table
 CREATE TABLE players(id SERIAL PRIMARY KEY, name text);
 
